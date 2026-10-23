@@ -4,16 +4,16 @@ Windows 11向けの軽量な半透明リソースモニターです。CPU、メ�
 
 ## ダウンロード
 
-現在の正式版は **v1.2.6** です。
+現在の正式版は **v1.2.7** です。
 
-- [ResMon-v1.2.6.zip をダウンロード](https://github.com/mezon-web/ResMon-Releases/releases/download/v1.2.6/ResMon-v1.2.6.zip)
-- [SHA-256確認用ファイル](https://github.com/mezon-web/ResMon-Releases/releases/download/v1.2.6/ResMon-v1.2.6.zip.sha256.txt)
+- [ResMon-v1.2.7.zip をダウンロード](https://github.com/mezon-web/ResMon-Releases/releases/download/v1.2.7/ResMon-v1.2.7.zip)
+- [SHA-256確認用ファイル](https://github.com/mezon-web/ResMon-Releases/releases/download/v1.2.7/ResMon-v1.2.7.zip.sha256.txt)
 - [最新リリース](https://github.com/mezon-web/ResMon-Releases/releases/latest)
 
 ## 起動方法
 
 1. ZIPをダウンロードし、書き込み可能なフォルダに展開します。
-2. 展開された `ResMon-v1.2.6` フォルダ内の `ResMon.exe` を起動します。
+2. 展開された `ResMon-v1.2.7` フォルダ内の `ResMon.exe` を起動します。
 3. オーバーレイの右クリック、またはタスクトレイのアイコンから設定を開きます。
 
 日本語版Windows 11のx64環境向けです。.NET Desktop Runtimeの追加インストールは不要です。ZIPには `ResMon.exe` とこの `README.md` だけを収録しています。
@@ -43,7 +43,11 @@ CPU使用率、メモリ使用量、ディスク読み書き速度、GPU使用�
 
 準備中の項目は「準備中」、更新が止まった項目は「古い値」と表示します。数値や設定画面の項目へカーソルを合わせると、取得状況や最終成功時刻を確認できます。
 
-CPU温度を取得できない場合は、Windowsが公開するACPI Thermal Zoneの有効な最高温度を `SYS°` として表示します。`SYS°` はCPU Packageの温度ではなく、筐体や基板などの温度を示す場合があります。
+CPU温度を読み取るには、追加ソフト「PawnIO」が必要な場合があります。設定の「CPU温度の診断」から、取得状況や導入方法を確認できます。「PawnIOの導入方法（公式）」は公式サイトを開きます。インストールは公式サイトの案内に従って行ってください。
+
+PawnIOを有効にする場合は、本アプリを管理者として起動してください。診断画面の「管理者として再起動」を押し、Windowsの確認画面で許可すると、設定を保存してResMonを起動し直します。キャンセルや起動失敗の場合は、今のResMonを使い続けられます。PawnIOをインストール・更新した後は、ResMonを再起動してください。
+
+診断画面の「再検出」で温度センサーを探し直せます。「生センサー／LHMレポートを表示」で詳細を表示し、「保存…」でテキストに保存できます。CPU温度は機器やドライバー、実行権限により取得できない場合があります。
 
 ネットワークはWindowsが外向き通信の最適経路として選んだ1つのアダプターを計測します。有線・Wi-Fi・VPNなどの切り替えに追従します。VRAMはGPU Adapter MemoryカウンターとDXGIの総容量を使用します。
 
@@ -56,13 +60,20 @@ CPU温度を取得できない場合は、Windowsが公開するACPI Thermal Zon
 ZIPとSHA-256確認用ファイルを同じフォルダへ保存し、PowerShellで次を実行します。
 
 ```powershell
-Get-FileHash .\ResMon-v1.2.6.zip -Algorithm SHA256
-Get-Content .\ResMon-v1.2.6.zip.sha256.txt
+Get-FileHash .\ResMon-v1.2.7.zip -Algorithm SHA256
+Get-Content .\ResMon-v1.2.7.zip.sha256.txt
 ```
 
 表示されたハッシュが一致することを確認してください。
 
 ## 変更履歴
+
+### v1.2.7
+
+- 設定に「CPU温度の診断」を追加し、取得状況の確認とセンサーの再検出、診断レポートの表示・保存に対応しました。
+- PawnIOの公式案内と「管理者として再起動」を追加し、CPU温度の説明を整理しました。
+- 温度を取得できないときの再試行を追加しました。
+- CPU温度が取れないときに本体などの温度へ切り替えるSYS°表示を削除しました。
 
 ### v1.2.6
 
