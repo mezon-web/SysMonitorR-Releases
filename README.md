@@ -1,24 +1,24 @@
-# ResMon
+# SysMonitorR
 
 Windows 11向けの軽量な半透明リソースモニターです。CPU、メモリ、ディスク、GPU、VRAM、ネットワーク、温度、バッテリーを画面上の小さなバーで確認できます。
 
 ## ダウンロード
 
-現在の正式版は **v1.2.7** です。
+現在の正式版は **v1.2.8** です。
 
-- [ResMon-v1.2.7.zip をダウンロード](https://github.com/mezon-web/ResMon-Releases/releases/download/v1.2.7/ResMon-v1.2.7.zip)
-- [SHA-256確認用ファイル](https://github.com/mezon-web/ResMon-Releases/releases/download/v1.2.7/ResMon-v1.2.7.zip.sha256.txt)
-- [最新リリース](https://github.com/mezon-web/ResMon-Releases/releases/latest)
+- [SysMonitorR-v1.2.8.zip をダウンロード](https://github.com/mezon-web/SysMonitorR-Releases/releases/download/v1.2.8/SysMonitorR-v1.2.8.zip)
+- [SHA-256確認用ファイル](https://github.com/mezon-web/SysMonitorR-Releases/releases/download/v1.2.8/SysMonitorR-v1.2.8.zip.sha256.txt)
+- [最新リリース](https://github.com/mezon-web/SysMonitorR-Releases/releases/latest)
 
 ## 起動方法
 
 1. ZIPをダウンロードし、書き込み可能なフォルダに展開します。
-2. 展開された `ResMon-v1.2.7` フォルダ内の `ResMon.exe` を起動します。
+2. 展開された `SysMonitorR-v1.2.8` フォルダ内の `SysMonitorR.exe` を起動します。
 3. オーバーレイの右クリック、またはタスクトレイのアイコンから設定を開きます。
 
-日本語版Windows 11のx64環境向けです。.NET Desktop Runtimeの追加インストールは不要です。ZIPには `ResMon.exe` とこの `README.md` だけを収録しています。
+日本語版Windows 11のx64環境向けです。.NET Desktop Runtimeの追加インストールは不要です。ZIPには `SysMonitorR.exe` とこの `README.md` だけを収録しています。
 
-初回起動時に、実行ファイルと同じフォルダへ個人設定の `settings.json` を作成します。更新時はResMonを終了してから実行ファイルを置き換え、設定を引き継ぐ場合は `settings.json` を残してください。
+初回起動時に、実行ファイルと同じフォルダへ個人設定の `settings.json` を作成します。更新時はSysMonitorRを終了してから実行ファイルを置き換え、設定を引き継ぐ場合は `settings.json` を残してください。
 
 Windowsサインイン時の自動起動機能は、インストーラー未提供のため一時的に無効化しています。アプリから自動起動の登録は行いません。
 
@@ -45,7 +45,7 @@ CPU使用率、メモリ使用量、ディスク読み書き速度、GPU使用�
 
 CPU温度を読み取るには、追加ソフト「PawnIO」が必要な場合があります。設定の「CPU温度の診断」から、取得状況や導入方法を確認できます。「PawnIOの導入方法（公式）」は公式サイトを開きます。インストールは公式サイトの案内に従って行ってください。
 
-PawnIOを有効にする場合は、本アプリを管理者として起動してください。診断画面の「管理者として再起動」を押し、Windowsの確認画面で許可すると、設定を保存してResMonを起動し直します。キャンセルや起動失敗の場合は、今のResMonを使い続けられます。PawnIOをインストール・更新した後は、ResMonを再起動してください。
+PawnIOを有効にする場合は、本アプリを管理者として起動してください。診断画面の「管理者として再起動」を押し、Windowsの確認画面で許可すると、設定を保存してSysMonitorRを起動し直します。キャンセルや起動失敗の場合は、今のSysMonitorRを使い続けられます。PawnIOをインストール・更新した後は、SysMonitorRを再起動してください。
 
 診断画面の「再検出」で温度センサーを探し直せます。「生センサー／LHMレポートを表示」で詳細を表示し、「保存…」でテキストに保存できます。CPU温度は機器やドライバー、実行権限により取得できない場合があります。
 
@@ -60,13 +60,19 @@ PawnIOを有効にする場合は、本アプリを管理者として起動し�
 ZIPとSHA-256確認用ファイルを同じフォルダへ保存し、PowerShellで次を実行します。
 
 ```powershell
-Get-FileHash .\ResMon-v1.2.7.zip -Algorithm SHA256
-Get-Content .\ResMon-v1.2.7.zip.sha256.txt
+Get-FileHash .\SysMonitorR-v1.2.8.zip -Algorithm SHA256
+Get-Content .\SysMonitorR-v1.2.8.zip.sha256.txt
 ```
 
 表示されたハッシュが一致することを確認してください。
 
 ## 変更履歴
+
+### v1.2.8
+
+- アプリ名をResMonからSysMonitorRへ変更しました。実行ファイル名は `SysMonitorR.exe` です。
+- 画面表示、診断レポート、配布名とGitHubのリポジトリ名を新名称へ統一しました。
+- 旧版の `settings.json` を新しい実行ファイル横へコピーすると設定を引き継げます。更新時は旧版をトレイの「終了」から終了し、ショートカットも新しいEXEへ変更してください。
 
 ### v1.2.7
 
@@ -94,7 +100,7 @@ Get-Content .\ResMon-v1.2.7.zip.sha256.txt
 
 - 最前面指定がONのまま通常ウィンドウの背面へ回った場合も、実際の重なりを検知して自動復旧するようにしました。
 - 復旧時はフォーカスを奪わず、正常な最前面グループにあるほかのウィンドウとの順序を維持します。
-- 非表示・最小化中・別デスクトップ・ResMonが所有するウィンドウは復旧の検知対象から除外します。
+- 非表示・最小化中・別デスクトップ・SysMonitorRが所有するウィンドウは復旧の検知対象から除外します。
 
 ### v1.2.3
 
