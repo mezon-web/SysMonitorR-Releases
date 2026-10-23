@@ -6,14 +6,14 @@ Windows 11向けの軽量な半透明リソースモニターです。CPU、メ�
 
 現在の正式版は **v1.2.6** です。
 
-- [ResMon-v1.2.6-win-x64.zip をダウンロード](https://github.com/mezon-web/ResMon-Releases/releases/download/v1.2.6/ResMon-v1.2.6-win-x64.zip)
-- [SHA-256確認用ファイル](https://github.com/mezon-web/ResMon-Releases/releases/download/v1.2.6/ResMon-v1.2.6-win-x64.zip.sha256.txt)
+- [ResMon-v1.2.6.zip をダウンロード](https://github.com/mezon-web/ResMon-Releases/releases/download/v1.2.6/ResMon-v1.2.6.zip)
+- [SHA-256確認用ファイル](https://github.com/mezon-web/ResMon-Releases/releases/download/v1.2.6/ResMon-v1.2.6.zip.sha256.txt)
 - [最新リリース](https://github.com/mezon-web/ResMon-Releases/releases/latest)
 
 ## 起動方法
 
 1. ZIPをダウンロードし、書き込み可能なフォルダに展開します。
-2. 展開した `ResMon.exe` を起動します。
+2. 展開された `ResMon-v1.2.6` フォルダ内の `ResMon.exe` を起動します。
 3. オーバーレイの右クリック、またはタスクトレイのアイコンから設定を開きます。
 
 日本語版Windows 11のx64環境向けです。.NET Desktop Runtimeの追加インストールは不要です。ZIPには `ResMon.exe` とこの `README.md` だけを収録しています。
@@ -56,8 +56,8 @@ CPU温度を取得できない場合は、Windowsが公開するACPI Thermal Zon
 ZIPとSHA-256確認用ファイルを同じフォルダへ保存し、PowerShellで次を実行します。
 
 ```powershell
-Get-FileHash .\ResMon-v1.2.6-win-x64.zip -Algorithm SHA256
-Get-Content .\ResMon-v1.2.6-win-x64.zip.sha256.txt
+Get-FileHash .\ResMon-v1.2.6.zip -Algorithm SHA256
+Get-Content .\ResMon-v1.2.6.zip.sha256.txt
 ```
 
 表示されたハッシュが一致することを確認してください。
