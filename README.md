@@ -4,16 +4,16 @@ Windows 11向けの軽量な半透明リソースモニターです。CPU、メ�
 
 ## ダウンロード
 
-現在の正式版は **v1.2.8** です。
+現在の正式版は **v1.2.9** です。
 
-- [SysMonitorR-v1.2.8.zip をダウンロード](https://github.com/mezon-web/SysMonitorR-Releases/releases/download/v1.2.8/SysMonitorR-v1.2.8.zip)
-- [SHA-256確認用ファイル](https://github.com/mezon-web/SysMonitorR-Releases/releases/download/v1.2.8/SysMonitorR-v1.2.8.zip.sha256.txt)
+- [SysMonitorR-v1.2.9.zip をダウンロード](https://github.com/mezon-web/SysMonitorR-Releases/releases/download/v1.2.9/SysMonitorR-v1.2.9.zip)
+- [SHA-256確認用ファイル](https://github.com/mezon-web/SysMonitorR-Releases/releases/download/v1.2.9/SysMonitorR-v1.2.9.zip.sha256.txt)
 - [最新リリース](https://github.com/mezon-web/SysMonitorR-Releases/releases/latest)
 
 ## 起動方法
 
 1. ZIPをダウンロードし、書き込み可能なフォルダに展開します。
-2. 展開された `SysMonitorR-v1.2.8` フォルダ内の `SysMonitorR.exe` を起動します。
+2. 展開された `SysMonitorR-v1.2.9` フォルダ内の `SysMonitorR.exe` を起動します。
 3. オーバーレイの右クリック、またはタスクトレイのアイコンから設定を開きます。
 
 日本語版Windows 11のx64環境向けです。.NET Desktop Runtimeの追加インストールは不要です。ZIPには `SysMonitorR.exe` とこの `README.md` だけを収録しています。
@@ -60,13 +60,18 @@ PawnIOを有効にする場合は、本アプリを管理者として起動し�
 ZIPとSHA-256確認用ファイルを同じフォルダへ保存し、PowerShellで次を実行します。
 
 ```powershell
-Get-FileHash .\SysMonitorR-v1.2.8.zip -Algorithm SHA256
-Get-Content .\SysMonitorR-v1.2.8.zip.sha256.txt
+Get-FileHash .\SysMonitorR-v1.2.9.zip -Algorithm SHA256
+Get-Content .\SysMonitorR-v1.2.9.zip.sha256.txt
 ```
 
 表示されたハッシュが一致することを確認してください。
 
 ## 変更履歴
+
+### v1.2.9
+
+- CPU温度の初期位置をCPUの次にしました。
+- 初期値をフォント10px、行間14px、バーの長さ60px、太さ4pxにしました。保存済みの設定は引き継ぎます。
 
 ### v1.2.8
 
