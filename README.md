@@ -4,16 +4,16 @@ Windows 11向けの軽量な半透明リソースモニターです。CPU、メ�
 
 ## ダウンロード
 
-現在の正式版は **v1.2.9** です。
+現在の正式版は **v1.2.10** です。
 
-- [SysMonitorR-v1.2.9.zip をダウンロード](https://github.com/mezon-web/SysMonitorR-Releases/releases/download/v1.2.9/SysMonitorR-v1.2.9.zip)
-- [SHA-256確認用ファイル](https://github.com/mezon-web/SysMonitorR-Releases/releases/download/v1.2.9/SysMonitorR-v1.2.9.zip.sha256.txt)
+- [SysMonitorR-v1.2.10.zip をダウンロード](https://github.com/mezon-web/SysMonitorR-Releases/releases/download/v1.2.10/SysMonitorR-v1.2.10.zip)
+- [SHA-256確認用ファイル](https://github.com/mezon-web/SysMonitorR-Releases/releases/download/v1.2.10/SysMonitorR-v1.2.10.zip.sha256.txt)
 - [最新リリース](https://github.com/mezon-web/SysMonitorR-Releases/releases/latest)
 
 ## 起動方法
 
 1. ZIPをダウンロードし、書き込み可能なフォルダに展開します。
-2. 展開された `SysMonitorR-v1.2.9` フォルダ内の `SysMonitorR.exe` を起動します。
+2. 展開された `SysMonitorR-v1.2.10` フォルダ内の `SysMonitorR.exe` を起動します。
 3. オーバーレイの右クリック、またはタスクトレイのアイコンから設定を開きます。
 
 日本語版Windows 11のx64環境向けです。.NET Desktop Runtimeの追加インストールは不要です。ZIPには `SysMonitorR.exe` とこの `README.md` だけを収録しています。
@@ -43,6 +43,10 @@ CPU使用率、メモリ使用量、ディスク読み書き速度、GPU使用�
 
 準備中の項目は「準備中」、更新が止まった項目は「古い値」と表示します。数値や設定画面の項目へカーソルを合わせると、取得状況や最終成功時刻を確認できます。
 
+CPU使用率はWindowsのProcessor Information全体Timeカウンターを使用します。取得に失敗した場合、64論理CPU以下では旧方式へ代替し、30秒間隔で主取得元の復旧を確認します。64論理CPU超では、一部プロセッサグループだけの値を全体値として表示しません。CPU使用率の取得に管理者権限や追加ドライバーは不要です。
+
+Windowsの版や採取タイミングによりタスクマネージャーと差が出る場合があります。すべてのPCでの一致や、報告された大幅な過小表示の解消は確認できていません。
+
 CPU温度を読み取るには、追加ソフト「PawnIO」が必要な場合があります。設定の「CPU温度の診断」から、取得状況や導入方法を確認できます。「PawnIOの導入方法（公式）」は公式サイトを開きます。インストールは公式サイトの案内に従って行ってください。
 
 PawnIOを有効にする場合は、本アプリを管理者として起動してください。診断画面の「管理者として再起動」を押し、Windowsの確認画面で許可すると、設定を保存してSysMonitorRを起動し直します。キャンセルや起動失敗の場合は、今のSysMonitorRを使い続けられます。PawnIOをインストール・更新した後は、SysMonitorRを再起動してください。
@@ -60,13 +64,19 @@ PawnIOを有効にする場合は、本アプリを管理者として起動し�
 ZIPとSHA-256確認用ファイルを同じフォルダへ保存し、PowerShellで次を実行します。
 
 ```powershell
-Get-FileHash .\SysMonitorR-v1.2.9.zip -Algorithm SHA256
-Get-Content .\SysMonitorR-v1.2.9.zip.sha256.txt
+Get-FileHash .\SysMonitorR-v1.2.10.zip -Algorithm SHA256
+Get-Content .\SysMonitorR-v1.2.10.zip.sha256.txt
 ```
 
 表示されたハッシュが一致することを確認してください。
 
 ## 変更履歴
+
+### v1.2.10
+
+- CPU使用率の主取得元をWindowsの全体Timeカウンターへ変更しました。
+- 取得失敗時の代替と復旧、初回や中断後の準備状態を改善しました。
+- 取得元はCPUのツールチップで確認できます。保存済みの設定は引き継ぎます。
 
 ### v1.2.9
 
@@ -111,3 +121,4 @@ Get-Content .\SysMonitorR-v1.2.9.zip.sha256.txt
 
 - Windowsサインイン時の自動起動設定を、設定画面とトレイメニューから一時的に削除しました。
 - 公開配布リポジトリからZIPとSHA-256確認用ファイルをダウンロードできるようにしました。
+
