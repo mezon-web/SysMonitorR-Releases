@@ -4,17 +4,17 @@ Windows 11向けの軽量な半透明リソースモニターです。CPU、メ�
 
 ## ダウンロード
 
-現在の正式版は **v1.2.10** です。
+現在の正式版は **v1.2.11** です。
 
-- [SysMonitorR-v1.2.10.zip をダウンロード](https://github.com/mezon-web/SysMonitorR-Releases/releases/download/v1.2.10/SysMonitorR-v1.2.10.zip)
-- [SHA-256確認用ファイル](https://github.com/mezon-web/SysMonitorR-Releases/releases/download/v1.2.10/SysMonitorR-v1.2.10.zip.sha256.txt)
+- [SysMonitorR-v1.2.11.zip をダウンロード](https://github.com/mezon-web/SysMonitorR-Releases/releases/download/v1.2.11/SysMonitorR-v1.2.11.zip)
+- [SHA-256確認用ファイル](https://github.com/mezon-web/SysMonitorR-Releases/releases/download/v1.2.11/SysMonitorR-v1.2.11.zip.sha256.txt)
 - [最新リリース](https://github.com/mezon-web/SysMonitorR-Releases/releases/latest)
 
 ## 起動方法
 
 1. ZIPをダウンロードし、書き込み可能なフォルダに展開します。
-2. 展開された `SysMonitorR-v1.2.10` フォルダ内の `SysMonitorR.exe` を起動します。
-3. オーバーレイの右クリック、またはタスクトレイのアイコンから設定を開きます。
+2. 展開された `SysMonitorR-v1.2.11` フォルダ内の `SysMonitorR.exe` を起動します。
+3. オーバーレイ、またはタスクトレイのアイコンの右クリックメニューから設定を開きます。
 
 日本語版Windows 11のx64環境向けです。.NET Desktop Runtimeの追加インストールは不要です。ZIPには `SysMonitorR.exe` とこの `README.md` だけを収録しています。
 
@@ -25,6 +25,7 @@ Windowsサインイン時の自動起動機能は、インストーラー未提�
 ## 使い方
 
 - オーバーレイを左ドラッグすると移動できます。
+- トレイアイコンを左シングルクリックすると、オーバーレイを表示してアクティブにします。「一定時間非表示」中の場合は解除します。
 - 位置を見失った場合は、トレイの「位置を戻す」で主画面へ戻せます。
 - 通常ウィンドウの背面へ回った場合は、最前面指定がONのままでも実際の重なりを検知し、約1秒ごとに確認してフォーカスを奪わず自動復旧します。
 - 設定の「表示する項目」で、項目の表示・非表示を切り替えられます。左の `☰` をドラッグすると表示順を変更できます。ネットワークの受信・送信は1組として並び替えます。
@@ -64,13 +65,18 @@ PawnIOを有効にする場合は、本アプリを管理者として起動し�
 ZIPとSHA-256確認用ファイルを同じフォルダへ保存し、PowerShellで次を実行します。
 
 ```powershell
-Get-FileHash .\SysMonitorR-v1.2.10.zip -Algorithm SHA256
-Get-Content .\SysMonitorR-v1.2.10.zip.sha256.txt
+Get-FileHash .\SysMonitorR-v1.2.11.zip -Algorithm SHA256
+Get-Content .\SysMonitorR-v1.2.11.zip.sha256.txt
 ```
 
 表示されたハッシュが一致することを確認してください。
 
 ## 変更履歴
+
+### v1.2.11
+
+- トレイアイコンの左シングルクリックで、オーバーレイを表示してアクティブにするようにしました。
+- 「一定時間非表示」中も、トレイアイコンの左シングルクリックで解除できます。保存済みの設定は引き継ぎます。
 
 ### v1.2.10
 
@@ -121,4 +127,3 @@ Get-Content .\SysMonitorR-v1.2.10.zip.sha256.txt
 
 - Windowsサインイン時の自動起動設定を、設定画面とトレイメニューから一時的に削除しました。
 - 公開配布リポジトリからZIPとSHA-256確認用ファイルをダウンロードできるようにしました。
-
