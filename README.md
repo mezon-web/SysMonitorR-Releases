@@ -6,9 +6,9 @@ Windows 11向けの軽量な半透明リソースモニターです。CPU、メ�
 
 現在の正式版は **v1.2.11** です。
 
-- [SysMonitorR-v1.2.11.zip をダウンロード](https://github.com/mezon-web/SysMonitorR-Releases/releases/download/v1.2.11/SysMonitorR-v1.2.11.zip)
+- **[最新版をダウンロード（v1.2.11・Windows x64・ZIP）](https://github.com/mezon-web/SysMonitorR-Releases/releases/download/v1.2.11/SysMonitorR-v1.2.11.zip)**
 - [SHA-256確認用ファイル](https://github.com/mezon-web/SysMonitorR-Releases/releases/download/v1.2.11/SysMonitorR-v1.2.11.zip.sha256.txt)
-- [最新リリース](https://github.com/mezon-web/SysMonitorR-Releases/releases/latest)
+- [更新内容](https://github.com/mezon-web/SysMonitorR-Releases/releases/tag/v1.2.11) · [過去バージョン](https://github.com/mezon-web/SysMonitorR-Releases/releases)
 
 ## 起動方法
 
@@ -127,3 +127,5 @@ Get-Content .\SysMonitorR-v1.2.11.zip.sha256.txt
 
 - Windowsサインイン時の自動起動設定を、設定画面とトレイメニューから一時的に削除しました。
 - 公開配布リポジトリからZIPとSHA-256確認用ファイルをダウンロードできるようにしました。
+
+<!-- 配布案内の更新手順: 実行用Assetは版番号付きのため、次回リリース公開時にREADMEの版番号・直リンク・展開先名を新しいAssetに合わせて更新する。更新内容・過去バージョンへのリンクを残し、匿名のHEADリクエスト等で直リンクの到達先を確認する。GitHub Actionsは使用しない。 -->
