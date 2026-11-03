@@ -16,7 +16,7 @@ Windows 11向けの軽量な半透明リソースモニターです。CPU、メ�
 2. 展開された `SysMonitorR-v1.2.11` フォルダ内の `SysMonitorR.exe` を起動します。
 3. オーバーレイ、またはタスクトレイのアイコンの右クリックメニューから設定を開きます。
 
-日本語版Windows 11のx64環境向けです。.NET Desktop Runtimeの追加インストールは不要です。ZIPには `SysMonitorR.exe` とこの `README.md` だけを収録しています。
+日本語版Windows 11のx64環境向けです。.NETは同梱していません。[.NET 10 Desktop Runtime x64](https://dotnet.microsoft.com/ja-jp/download/dotnet/10.0)を別途インストールしてください。ZIPには `SysMonitorR.exe` とこの `README.md` だけを収録しています。
 
 初回起動時に、実行ファイルと同じフォルダへ個人設定の `settings.json` を作成します。更新時はSysMonitorRを終了してから実行ファイルを置き換え、設定を引き継ぐ場合は `settings.json` を残してください。
 
@@ -129,3 +129,4 @@ Get-Content .\SysMonitorR-v1.2.11.zip.sha256.txt
 - 公開配布リポジトリからZIPとSHA-256確認用ファイルをダウンロードできるようにしました。
 
 <!-- 配布案内の更新手順: 実行用Assetは版番号付きのため、次回リリース公開時にREADMEの版番号・直リンク・展開先名を新しいAssetに合わせて更新する。更新内容・過去バージョンへのリンクを残し、匿名のHEADリクエスト等で直リンクの到達先を確認する。GitHub Actionsは使用しない。 -->
+
